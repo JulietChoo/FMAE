@@ -13,12 +13,12 @@ pip install timm==1.0.11 rich albumentations==1.3.0 jpegio opencv-python fvcore 
    
 **Detection**
 ```
-cd /code/FMAE && sh /code/FMAE/runs/FMAE_det.sh
+cd FMAE && sh runs/FMAE_det.sh
 ```
 
 **Localization**
 ```
-cd /code/FMAE && sh /code/FMAE/runs/FMAE_loc.sh
+cd FMAE && sh runs/FMAE_loc.sh
 ```
 
 
