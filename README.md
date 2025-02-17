@@ -34,7 +34,9 @@ cd FMAE && sh runs/test_FMAE_loc.sh
 ```
 
 5. Inference
+```
 python inference.py --chkpt /path/to/your-checkpoint
+```
 
 ## Contact
 If you have any question, please contact zhujy53@mail.ustc.edu.cn
