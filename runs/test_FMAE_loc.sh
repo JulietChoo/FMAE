@@ -2,7 +2,7 @@ base_dir="/model/zhujy/IMDL/FMAE_loc"
 mkdir -p ${base_dir}
 
 python \
-/code/IMDL/test.py \
+./test.py \
     --model FMAE \
     --edge_mask_width 7 \
     --world_size 1 \

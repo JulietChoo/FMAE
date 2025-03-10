@@ -9,7 +9,7 @@ mkdir -p ${base_dir}
 #     --nproc_per_node=1 \
 
 python \
-/code/IMDL/train.py \
+./train.py \
     --model FMAE \
     --world_size 1 \
     --batch_size 8 \
@@ -41,7 +41,7 @@ python \
     --gradmask_ratio 0.3 ;
     
 python \
-/code/IMDL/test.py \
+./test.py \
     --model FMAE \
     --edge_mask_width 7 \
     --world_size 1 \

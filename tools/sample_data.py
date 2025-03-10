@@ -71,3 +71,7 @@ if __name__ == '__main__':
     datasets = ['Casiav1', 'Columbia', 'IMD2020', 'Autosplice']
     dst_dir = '/data/zhujy/IMDL/SampleDataset_DF_det_300'
     sample_dataset_det(datasets, dst_dir)
+
+    datasets = ['Casiav1', 'Columbia', 'NIST', 'IMD2020', 'DSO-1', 'Korus', 'Autosplice', 'OpenForensics']
+    dst_dir = '/data/zhujy/IMDL/SampleDataset_DF_loc_100'
+    sample_dataset_loc(datasets, dst_dir)

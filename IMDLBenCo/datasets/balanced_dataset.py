@@ -122,7 +122,7 @@ class UnBalancedAuDataset(Dataset):
         # Defalut
         self.settings_list = [
             ['/data/zhujy/IMDL/Casiav2_revised', ManiAuDataset],
-            ['/data/zhujy/IMDL/FantasticReality', ManiDataset],       
+            ['/data/zhujy/IMDL/FantasticReality', ManiAuDataset],       
         ]
             
 

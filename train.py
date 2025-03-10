@@ -318,7 +318,7 @@ def main(args, model_args):
     combined_args.update({k: v for k, v in vars(model_args).items() if k in model_init_params})
     model = model(**combined_args)
     # ================GradMask====================
-    grad_mask = sft.get_diff_mask(args.gradmask_path, mask_ratio=args.gradmask_ratio)
+    grad_mask = sft.get_gradmask(args.gradmask_path, mask_ratio=args.gradmask_ratio)
     # ============================================
     if not args.if_detect:
         evaluator_list = [
@@ -413,7 +413,7 @@ def main(args, model_args):
                         args=args, model=model, model_without_ddp=model_without_ddp, optimizer=optimizer,
                         loss_scaler=loss_scaler, epoch=epoch, epoch_name='last')
             if not args.if_detect:  # localization
-                if evaluate_metric_value > 0.41:
+                if evaluate_metric_value > 0.425:
                     if evaluate_metric_value > best_evaluate_metric_value:
                         best_evaluate_metric_value = evaluate_metric_value
                         best_epoch = epoch
@@ -435,14 +435,10 @@ def main(args, model_args):
             log_stats =  {**{f'train_{k}': v for k, v in train_stats.items()},
                         **{f'test_{k}': v for k, v in test_stats.items()},
                             'epoch': epoch,}
-            if args.if_detect:
-                if epoch - best_epoch >= 25:
-                    print('Early stopping triggered')
-                    break
-            else:
-                if epoch - best_epoch >= 30:
-                    print('Early stopping triggered')
-                    break
+
+            if epoch - best_epoch >= 40:
+                print('Early stopping triggered')
+                break
 
         else:
             log_stats = {**{f'train_{k}': v for k, v in train_stats.items()}, 'epoch': epoch,}

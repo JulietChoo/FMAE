@@ -12,9 +12,9 @@ from torch.utils.tensorboard import SummaryWriter
 import IMDLBenCo.training_scripts.utils.misc as misc
 
 from IMDLBenCo.registry import MODELS, POSTFUNCS
-from IMDLBenCo.datasets import ManiDataset, ManiAuDataset, JsonDataset
+from IMDLBenCo.datasets import ManiDataset, ManiAuDataset
 from IMDLBenCo.transforms import get_albu_transforms
-from IMDLBenCo.evaluation import PixelF1, PixelAUC, ImageF1, ImageAccuracy, ImageAUC, ImageEER
+from IMDLBenCo.evaluation import PixelF1, PixelAUC, ImageAccuracy, ImageAUC, ImageEER
 
 from IMDLBenCo.training_scripts.tester import test_one_epoch
 
@@ -22,17 +22,6 @@ from IMDLBenCo.model_zoo.FMAE.FMAE import FMAE
 
 def get_args_parser():
     parser = argparse.ArgumentParser('IMDLBench testing launch!', add_help=True)
-    # ++++++++++++TODO++++++++++++++++
-    # 这里是每个模型定制化的input区域，包括load与训练模型，模型的magic number等等
-    # 需要根据你们的模型定制化修改这里 
-    # 目前这里的内容都是仅仅给IML-ViT用的
-    # parser.add_argument('--vit_pretrain_path', default = None, type=str, help='path to vit pretrain model by MAE')
-    # parser.add_argument('--edge_broaden', default=7, type=int,
-    #                     help='Edge broaden size (in pixels) for edge_generator.')
-    # parser.add_argument('--edge_lambda', default=20, type=float,
-    #                     help='hyper-parameter of the weight for proposed edge loss.')
-    # parser.add_argument('--predict_head_norm', default="BN", type=str,
-    #                     help="norm for predict head, can be one of 'BN', 'LN' and 'IN' (batch norm, layer norm and instance norm). It may influnce the result  on different machine or datasets!")
     # -------------------------------
     # Model name
     parser.add_argument('--model', default='FMAE', type=str,
@@ -57,7 +46,7 @@ def get_args_parser():
                         help='test dataset json, should be a json file contains many datasets. Details are in readme.md')
     # ------------------------------------
     # Testing 相关的参数
-    parser.add_argument('--checkpoint_path', default = '/root/workspace/IML-ViT/output_dir', type=str, help='path to the dir where saving checkpoints')
+    parser.add_argument('--checkpoint_path', default = '/model/FMAE/output_dir', type=str, help='path to the dir where saving checkpoints')
     parser.add_argument('--test_batch_size', default=2, type=int,
                         help="batch size for testing")
     parser.add_argument('--no_model_eval', action='store_true', 

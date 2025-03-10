@@ -9,7 +9,7 @@ mkdir -p ${save_dir}
 #     --nnodes=1     \
     
 python \
-/code/IMDL/test.py \
+./test.py \
     --model FMAE \
     --edge_mask_width 7 \
     --world_size 1 \

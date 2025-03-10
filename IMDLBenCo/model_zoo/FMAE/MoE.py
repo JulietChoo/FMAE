@@ -139,7 +139,7 @@ class MoENE(nn.Module):
         # Bayar
         self.bayar = BayarConv2d(in_channels=1, out_channels=out_channels)
         # Noiseprint
-        self.noiseprint = get_noiseprint('/model/zhujy/IMDL/model_zoo/trufor/noiseprint.pth')
+        self.noiseprint = get_noiseprint('IMDLBenCo/model_zoo/FMAE/noiseprint.pth')
 
         self.layers = layers
         self.vit = noise_vit_tiny(patch_size=16, embed_dim=384, depth=self.layers, num_heads=3, mlp_ratio=4, qkv_bias=True,

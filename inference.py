@@ -45,7 +45,7 @@ def get_args_parser():
                         help='test dataset json, should be a json file contains many datasets. Details are in readme.md')
     # ------------------------------------
     # Testing 相关的参数
-    parser.add_argument('--chkpt', default = '/model/zhujy/IMDL/FMAE_loc/checkpoint-9.pth', type=str, help='path to the dir where saving checkpoints')
+    parser.add_argument('--chkpt', default = '/model/zhujy/IMDL/FMAE_loc/checkpoint-25.pth', type=str, help='path to the dir where saving checkpoints')
     parser.add_argument('--test_batch_size', default=1, type=int,
                         help="batch size for testing")
 
