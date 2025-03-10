@@ -40,8 +40,8 @@ Through experiments, we found that better results can be achieved by adjusting t
 
 ### Test
 ```
-cd FMAE && sh runs/test_FMAE_det.sh
-cd FMAE && sh runs/test_FMAE_loc.sh
+cd FMAE && sh runs/test_FMAE_det.sh   # checkpoint-47.pth
+cd FMAE && sh runs/test_FMAE_loc.sh   # checkpoint-25.pth
 ```
 
 ### Visualization
