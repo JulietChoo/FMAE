@@ -18,7 +18,7 @@ pip install timm==1.0.11 rich albumentations==1.3.0 jpegio opencv-python fvcore 
 [checkpoint-25.pth](https://drive.google.com/file/d/1PCjmmtY40ORuypOYGLf2rqhcVEbkSWkY/view?usp=drive_link)
 
 ### Detection weight download link
-[checkpoint-47.pth](https://drive.google.com/file/d/1VF2VK0Q_aoQkDcwkxycNsXUbgYu841a-/view?usp=drive_link)
+[checkpoint-47.pth](https://drive.google.com/file/d/1nsEq9xWaxlM3_T3DV-bSJSqxKoa3rNWf/view?usp=drive_link)
 
 
 
